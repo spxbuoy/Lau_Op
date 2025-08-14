@@ -1,14 +1,19 @@
+<p align="center">  
+    <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>  
+  </p>  
+<p align="center">
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=Glitch+Project+Autoscript" />
+</p>
+<p align="center">  
+    <img src="https://user-images.githubusercontent.com/76937659/153705486-44e6c1b2-74fa-4d44-be1c-36c8fdb83331.gif"/>  
+  </p>  
+
+![Glitch Tech Ops card name](https://cardivo.vercel.app/api?name=Glitch{lau}『𝐅𝐍』&description=Hi,%20everyone!%20and%20Nice%20to%20meet%20you%20%F0%9F%91%8B&image=https://raw.githubusercontent.com/Rerechan02/simple-xray/main/funny1.jpg?v=4&backgroundColor=%23ecf0f1&telegram=/&github=Spxbuoy&pattern=leaf&colorPattern=%23eaeaea)
+
 <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=+W+E+L+C+O+M+E" />
 </p>
-</p>
-<img src="https://readme-typing-svg.herokuapp.com?color=%234d8c33ff&center=true&vCenter=true&lines=TO-SAVAGE-𝐓𝐄𝐂𝐇" />
-</p>
 <p align="center"> 
- 𝚅𝙸𝚂𝙸𝚃𝙾𝚁𝚂 𝙲𝙾𝚄𝙽𝚃
- <img src="https://profile-counter.glitch.me/spxbuoy/count.svg" alt="Visitors">
 </p>
-
-
 
 ## UPGRADE FOR DEBIAN
 ```
@@ -82,4 +87,5 @@ wget -q https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/update.sh && chmod
 ### CONTACT ADMIN !
 savagetech56:
 <br><br><a href="https://wa.me/+254112011036" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Whatsapp&label=Whatsapp&message=Click%20Here&color=#006400">
+
 
