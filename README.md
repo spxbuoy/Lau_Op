@@ -29,7 +29,8 @@ apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 ## INSTALL SCRIPT 
 Autoscript Premium by Spxlau 
 ```
-apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/genz.sh && chmod +x genz.sh && ./genz.sh
+apt update && apt upgrade -y && apt install wget -y && wget -q https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/genz.sh && chmod +x genz.sh && ./genz.sh
+
 ```
 ## UPDATE SCRIPT
 via
@@ -87,6 +88,7 @@ wget -q https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/update.sh && chmod
 ### CONTACT ADMIN !
 savagetech56:
 <br><br><a href="https://wa.me/+254112011036" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Whatsapp&label=Whatsapp&message=Click%20Here&color=#006400">
+
 
 
 
