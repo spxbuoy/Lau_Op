@@ -3,7 +3,7 @@ MYIP=$(wget -qO- icanhazip.com);
 apt install jq curl -y
 #read -p "Masukan Domain (contoh : Dragon)" domen
 DOMAIN=domainmu
-sub=glitchtechops
+sub=spider
 dns=${sub}.my.id
 CF_ID=abuoylau
 CF_KEY=keytele
