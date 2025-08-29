@@ -1,6 +1,6 @@
 #!/bin/bash
 # Edition : Stable Edition V3.0
-# Author  : spider store
+# Author  : HE3ndrixx 
 # (C) Copyright 2024
 # =========================================
 
@@ -18,7 +18,7 @@ clear
 #	 menu
 #else
 
-echo -e "Installing 𝐓𝐂𝐏 𝐁𝐁𝐑 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 SPIDER 𝐒𝐓𝐎𝐑𝐄"
+echo -e "Installing 𝐓𝐂𝐏 HE3ndrixx  𝐒𝐓𝐎𝐑𝐄"
 echo -e "Please Wait BBR Installation Will Starting . . ."
 sleep 5
 clear

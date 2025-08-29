@@ -1,26 +1,27 @@
-REPO="https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/"
-wget -q -O /etc/systemd/system/limitvmess.service "${REPO}ubuntu/limitvmess.service" && chmod +x limitvmess.service >/dev/null 2>&1
-wget -q -O /etc/systemd/system/limitvless.service "${REPO}ubuntu/limitvless.service" && chmod +x limitvless.service >/dev/null 2>&1
-wget -q -O /etc/systemd/system/limittrojan.service "${REPO}ubuntu/limittrojan.service" && chmod +x limittrojan.service >/dev/null 2>&1
-wget -q -O /etc/systemd/system/limitshadowsocks.service "${REPO}ubuntu/limitshadowsocks.service" && chmod +x limitshadowsocks.service >/dev/null 2>&1
-wget -q -O /etc/xray/limit.vmess "${REPO}ubuntu/vmess" >/dev/null 2>&1
-wget -q -O /etc/xray/limit.vless "${REPO}ubuntu/vless" >/dev/null 2>&1
-wget -q -O /etc/xray/limit.trojan "${REPO}ubuntu/trojan" >/dev/null 2>&1
-wget -q -O /etc/xray/limit.shadowsocks "${REPO}ubuntu/shadowsocks" >/dev/null 2>&1
-chmod +x /etc/xray/limit.vmess
-chmod +x /etc/xray/limit.vless
-chmod +x /etc/xray/limit.trojan
-chmod +x /etc/xray/limit.shadowsocks
+#!/bin/bash
+REPO="https://raw.githubusercontent.com/Amchapeey/storage/main/"
+
+# Download services
+wget -q -O /etc/systemd/system/limitvmess.service "${REPO}ubuntu/limitvmess.service" && chmod +x /etc/systemd/system/limitvmess.service
+wget -q -O /etc/systemd/system/limitvless.service "${REPO}ubuntu/limitvless.service" && chmod +x /etc/systemd/system/limitvless.service
+wget -q -O /etc/systemd/system/limittrojan.service "${REPO}ubuntu/limittrojan.service" && chmod +x /etc/systemd/system/limittrojan.service
+wget -q -O /etc/systemd/system/limittrojango.service "${REPO}ubuntu/limittrojango.service" && chmod +x /etc/systemd/system/limittrojango.service
+wget -q -O /etc/systemd/system/limitshadowsocks.service "${REPO}ubuntu/limitshadowsocks.service" && chmod +x /etc/systemd/system/limitshadowsocks.service
+
+# Download limit scripts
+wget -q -O /etc/xray/limitvmess.sh "${REPO}ubuntu/limitvmess.sh"
+wget -q -O /etc/xray/limitvless.sh "${REPO}ubuntu/limitvless.sh"
+wget -q -O /etc/xray/limittrojan.sh "${REPO}ubuntu/limittrojan.sh"
+wget -q -O /etc/xray/limitshadowsocks.sh "${REPO}ubuntu/limitshadowsocks.sh"
+
+chmod +x /etc/xray/limitvmess.sh
+chmod +x /etc/xray/limitvless.sh
+chmod +x /etc/xray/limittrojan.sh
+chmod +x /etc/xray/limitshadowsocks.sh
+
+# Reload systemd and enable services
 systemctl daemon-reload
-systemctl enable --now limitvmess
-systemctl enable --now limitvless
-systemctl enable --now limittrojan
-systemctl enable --now limitshadowsocks
-# systemctl start limitvmess
-# systemctl start limitvless
-# systemctl start limittrojan
-# systemctl start limitshadowsocks
-# systemctl restart limitvmess
-# systemctl restart limitvless
-# systemctl restart limittrojan
-# systemctl restart limitshadowsocks
+systemctl enable --now limitvmess.service
+systemctl enable --now limitvless.service
+systemctl enable --now limittrojan.service
+systemctl enable --now limitshadowsocks.service
