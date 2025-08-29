@@ -8,6 +8,9 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 🧑‍💻🏴‍☠️🥷🗽 spider script 
 
+set -e
+
+# Colors
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
@@ -23,15 +26,48 @@ red='\e[1;31m'
 green='\e[0;32m'
 
 clear
-# // Exporint IP AddressInformation
-export IP=$( curl -sS icanhazip.com )
 
-# // Clear Data
-clear
-clear && clear && clear
-clear;clear;clear
+# Detect OS
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    OS=$ID
+    VER=$VERSION_ID
+else
+    echo -e "${ERROR} Cannot detect operating system!"
+    exit 1
+fi
 
-  # // Banner
+# Check root
+if [ "$EUID" -ne 0 ]; then
+    echo -e "${ERROR} Run this script as root"
+    exit 1
+fi
+
+# Arch check
+if [[ $(uname -m) != "x86_64" ]]; then
+    echo -e "${ERROR} Only x86_64 architecture is supported (found $(uname -m))"
+    exit 1
+fi
+
+# Print OS info
+echo -e "${OK} Detected OS: ${green}${PRETTY_NAME}${NC}"
+echo -e "${OK} Version: ${green}${VER}${NC}"
+
+# Update & basic deps (works on all Debian/Ubuntu)
+apt-get update -y
+apt-get upgrade -y
+apt-get install -y wget curl unzip jq gnupg lsb-release ca-certificates software-properties-common
+
+# Get server IP
+IP=$(curl -sS ipv4.icanhazip.com || curl -sS ifconfig.me)
+if [[ -z "$IP" ]]; then
+    echo -e "${ERROR} Could not detect server public IP"
+    exit 1
+else
+    echo -e "${OK} Server IP: ${green}$IP${NC}"
+fi
+
+# Banner
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "  Script : ${RED} 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 𝐒𝐏𝐈𝐃𝐄𝐑 𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐄 𝐒𝐓𝐎𝐑𝐄 ${NC}"
 echo -e "  Author : ${RED} 𝐒𝐏𝐈𝐃𝐄𝐑 ${NC}${YELLOW}${NC}"
