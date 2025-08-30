@@ -53,23 +53,24 @@ fi
 
 # IP check
 if [[ -z "$IP" ]]; then
+    # Auto-detect IP if not set
+    IP=$(curl -s ipv4.icanhazip.com)
+fi
+
+if [[ -z "$IP" ]]; then
     echo -e "${RED}[ERROR] IP Address ( ${YELLOW}Not Detected${NC} )"
     exit 1
 else
     echo -e "${GREEN}  » IP Address ( ${GREEN}$IP${NC} )"
 fi
 
-ALLOWED_IPS_URL="https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/Database"
-if curl -s "$ALLOWED_IPS_URL" | grep -Ev '^###' | grep -q "$IP"; then
-    echo -e "${GREEN}  » Your IP is registered for installation."
-else
-    echo -e "${ERRO}${GRAY} COULD NOT FIND ${NC} ${YELLOW}${IP}${NC} ${GRAY}IN THE DATABASE! INSTALLATION IS ABORTED.${NC}"
-    exit 1
-fi
+# ⚡ Skip whitelist check (all IPs allowed)
+echo -e "${GREEN}  » Skipping database check. All IPs allowed."
 
 echo ""
 read -p "$( echo -e "Press ${GREEN}[ ${NC}${GREEN}Enter${NC} ${GREEN}]${NC} For Starting Installation") "
 echo ""
+
 
 # Root check
 if [[ "${EUID}" -ne 0 ]]; then
