@@ -52,6 +52,9 @@ else
 fi
 
 # IP check
+# Detect Public IP
+IP=$(curl -s ifconfig.me || wget -qO- ifconfig.me)
+
 if [[ -z "$IP" ]]; then
     echo -e "${RED}[ERROR] IP Address ( ${YELLOW}Not Detected${NC} )"
     exit 1
