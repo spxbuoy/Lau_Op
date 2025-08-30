@@ -53,24 +53,23 @@ fi
 
 # IP check
 if [[ -z "$IP" ]]; then
-    # Auto-detect IP if not set
-    IP=$(curl -s ipv4.icanhazip.com)
-fi
-
-if [[ -z "$IP" ]]; then
     echo -e "${RED}[ERROR] IP Address ( ${YELLOW}Not Detected${NC} )"
     exit 1
 else
     echo -e "${GREEN}  » IP Address ( ${GREEN}$IP${NC} )"
 fi
 
-# ⚡ Skip whitelist check (all IPs allowed)
-echo -e "${GREEN}  » Skipping database check. All IPs allowed."
+ALLOWED_IPS_URL="https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/Database"
+if curl -s "$ALLOWED_IPS_URL" | grep -Ev '^###' | grep -q "$IP"; then
+    echo -e "${GREEN}  » Your IP is registered for installation."
+else
+    echo -e "${ERRO}${GRAY} COULD NOT FIND ${NC} ${YELLOW}${IP}${NC} ${GRAY}IN THE DATABASE! INSTALLATION IS ABORTED.${NC}"
+    exit 1
+fi
 
 echo ""
 read -p "$( echo -e "Press ${GREEN}[ ${NC}${GREEN}Enter${NC} ${GREEN}]${NC} For Starting Installation") "
 echo ""
-
 
 # Root check
 if [[ "${EUID}" -ne 0 ]]; then
@@ -700,6 +699,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     wget ${REPO}files/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 1 G"
 }
+
 function ins_Fail2ban() {
     clear
     # Install Fail2ban if not installed
@@ -727,8 +727,7 @@ function ins_Fail2ban() {
 
     mkdir -p "$DDOS_DIR"
     echo "DDOS Flate directory is ready at $DDOS_DIR"
-}
-
+    
 clear
 # banner
 echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
@@ -737,6 +736,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/drop
 # Ganti Banner
 wget -O /etc/kyt.txt "${REPO}files/issue.net"
 print_success "Fail2ban"
+}
 
 function ins_epro(){
 clear
