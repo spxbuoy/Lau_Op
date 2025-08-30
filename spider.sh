@@ -728,8 +728,8 @@ function ins_Fail2ban() {
     mkdir -p "$DDOS_DIR"
     echo "DDOS Flate directory is ready at $DDOS_DIR"
 }
-}
-clear 
+
+clear
 # banner
 echo "Banner /etc/kyt.txt" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/dropbear
@@ -737,7 +737,6 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/drop
 # Ganti Banner
 wget -O /etc/kyt.txt "${REPO}files/issue.net"
 print_success "Fail2ban"
-}
 
 function ins_epro(){
 clear
