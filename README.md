@@ -28,7 +28,7 @@
 
 ### INSTALL SCRIPT 
 ```
-apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/spxcore.sh && chmod +x chapeey.sh && ./chapeey.sh
+apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/spxbuoy/Lau_Op/main/chapeey.sh && chmod +x chapeey.sh && ./chapeey.sh
 
 ```
 
