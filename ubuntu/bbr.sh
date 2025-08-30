@@ -4,7 +4,7 @@ set -euo pipefail
 clear
 echo ""
 echo ""
-echo -e "Installing 𝐓𝐂𝐏 BBR 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 BY SPIDER 𝐒𝐎𝐅𝐓"
+echo -e "Installing 𝐓𝐂𝐏 BBR 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 BY 𝐒𝐏𝐈𝐃𝐄𝐑 𝐒𝐎𝐅𝐓"
 echo -e "Please Wait BBR Installation Will Starting . . ."
 sleep 5
 clear
